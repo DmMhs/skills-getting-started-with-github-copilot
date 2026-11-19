@@ -38,42 +38,6 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
-    },
-    "Soccer Team": {
-        "description": "Practice soccer skills and compete in team matches",
-        "schedule": "Mondays and Thursdays, 4:00 PM - 5:30 PM",
-        "max_participants": 22,
-        "participants": []
-    },
-    "Basketball Team": {
-        "description": "Develop basketball skills and play competitive games",
-        "schedule": "Tuesdays and Fridays, 4:00 PM - 5:30 PM",
-        "max_participants": 15,
-        "participants": []
-    },
-    "Drama Club": {
-        "description": "Act, rehearse, and perform plays and other theatrical productions",
-        "schedule": "Wednesdays, 3:30 PM - 5:30 PM",
-        "max_participants": 25,
-        "participants": []
-    },
-    "Art Workshop": {
-        "description": "Explore painting, drawing, and other visual art techniques",
-        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
-        "max_participants": 18,
-        "participants": []
-    },
-    "Debate Team": {
-        "description": "Build research and public speaking skills through competitive debates",
-        "schedule": "Mondays, 3:30 PM - 5:00 PM",
-        "max_participants": 16,
-        "participants": []
-    },
-    "Science Club": {
-        "description": "Conduct experiments and explore scientific topics and discoveries",
-        "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
-        "max_participants": 20,
-        "participants": []
     }
 }
 
@@ -97,10 +61,6 @@ def signup_for_activity(activity_name: str, email: str):
 
     # Get the specific activity
     activity = activities[activity_name]
-
-    # Validate student is not already signed up
-    if email in activity["participants"]:
-        raise HTTPException(status_code=400, detail="Student already signed up for this activity")
 
     # Add student
     activity["participants"].append(email)
